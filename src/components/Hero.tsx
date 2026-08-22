@@ -6,6 +6,8 @@ import Container from "./ui/Container";
 import Button from "./ui/Button";
 import HeroPosterArt from "./HeroPosterArt";
 
+const WHATSAPP_URL = "https://wa.me/message/LGAJJMCZOAZYI1";
+
 const heroStats = [
   { icon: Sparkles, value: "4K / FHD / HD", label: "Qualité adaptative" },
   { icon: MonitorSmartphone, value: "Multi-appareils", label: "Smart TV, Android, iOS" },
@@ -50,7 +52,7 @@ export default function Hero() {
               Voir les Offres
               <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button href="/contact" variant="secondary" className="text-sm">
+            <Button href={WHATSAPP_URL} external variant="secondary" className="text-sm">
               Essayer 24H Gratuit
             </Button>
           </div>

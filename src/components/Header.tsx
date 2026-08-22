@@ -9,6 +9,8 @@ import { siteConfig } from "@/lib/site";
 import Container from "./ui/Container";
 import Button from "./ui/Button";
 
+const WHATSAPP_URL = "https://wa.me/message/LGAJJMCZOAZYI1";
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -72,7 +74,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 xl:flex">
-          <Button href="/pricing" variant="primary" className="text-xs px-5 py-3.5">
+          <Button href={WHATSAPP_URL} external variant="primary" className="text-xs px-5 py-3.5">
             Essayer 24H Gratuitement
             <ArrowRight className="h-3.5 w-3.5" />
           </Button>
@@ -109,7 +111,8 @@ export default function Header() {
             ))}
             <div className="mt-3 border-t border-border pt-4">
               <Button
-                href="/pricing"
+                href={WHATSAPP_URL}
+                external
                 variant="primary"
                 className="w-full"
                 onClick={() => setOpen(false)}
