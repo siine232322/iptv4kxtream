@@ -1,6 +1,8 @@
-import { Trophy, Clapperboard, Film, Tv } from "lucide-react";
+import { Trophy, Clapperboard, Film, Tv, MessageCircle } from "lucide-react";
 import Container from "./ui/Container";
 import Button from "./ui/Button";
+
+const WHATSAPP_URL = "https://wa.me/message/LGAJJMCZOAZYI1";
 
 export default function CTA() {
   const icons = [Trophy, Clapperboard, Film, Tv];
@@ -29,6 +31,15 @@ export default function CTA() {
           <Button href="/contact" variant="ghost" className="border-2 border-white/40 text-white hover:text-white hover:bg-white/10 text-sm normal-case font-bold tracking-normal px-6 py-3.5 rounded-full">
             Contacter le Support
           </Button>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/40 px-6 py-3.5 text-sm font-bold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2"
+          >
+            <MessageCircle className="h-4 w-4" />
+            WhatsApp
+          </a>
         </div>
       </Container>
     </section>
