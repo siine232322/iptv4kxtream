@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, MessageCircle, Clock } from "lucide-react";
+import { Mail, MessageCircle, Clock, Phone } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlowBackground from "@/components/ui/GlowBackground";
@@ -48,6 +48,12 @@ export default function ContactPage() {
               title="Email"
               text={siteConfig.email}
               href={`mailto:${siteConfig.email}`}
+            />
+            <InfoCard
+              icon={Phone}
+              title="Téléphone"
+              text="+44 7446 198654"
+              href="tel:+447446198654"
             />
             <InfoCard
               icon={MessageCircle}
