@@ -24,6 +24,7 @@ export default function Button({
   className,
   onClick,
   type,
+  external,
 }: {
   href?: string;
   children: ReactNode;
@@ -31,12 +32,18 @@ export default function Button({
   className?: string;
   onClick?: () => void;
   type?: "button" | "submit";
+  external?: boolean;
 }) {
   const classes = clsx(base, variants[variant], className);
 
   if (href) {
     return (
-      <Link href={href} className={classes} onClick={onClick}>
+      <Link
+        href={href}
+        className={classes}
+        onClick={onClick}
+        {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      >
         {children}
       </Link>
     );

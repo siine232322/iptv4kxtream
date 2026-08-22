@@ -8,6 +8,8 @@ import Container from "./ui/Container";
 import SectionHeading from "./ui/SectionHeading";
 import Button from "./ui/Button";
 
+const WHATSAPP_URL = "https://wa.me/message/LGAJJMCZOAZYI1";
+
 export default function Pricing({
   compact = false,
   title = "Choisissez Votre Abonnement IPTV",
@@ -106,7 +108,8 @@ export default function Pricing({
               </ul>
 
               <Button
-                href="/contact"
+                href={WHATSAPP_URL}
+                external
                 variant={plan.popular ? "white" : "primary"}
                 className="w-full"
               >
