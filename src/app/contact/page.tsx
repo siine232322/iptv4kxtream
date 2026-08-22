@@ -3,7 +3,7 @@ import { Mail, MessageCircle, Clock, Phone } from "lucide-react";
 import Container from "@/components/ui/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlowBackground from "@/components/ui/GlowBackground";
-import ContactForm from "@/components/ContactForm";
+import WhatsAppQR from "@/components/WhatsAppQR";
 import { siteConfig } from "@/lib/site";
 import { pageSocial, breadcrumbJsonLd } from "@/lib/seo";
 
@@ -32,14 +32,12 @@ export default function ContactPage() {
           as="h1"
           eyebrow="Contact"
           title="Besoin d'aide ?"
-          description="Une question sur la configuration, la facturation ou la compatibilité ? Envoyez-nous un message, nous répondons rapidement."
+          description="Une question sur la configuration, la facturation ou la compatibilité ? Contactez-nous directement sur WhatsApp, nous répondons rapidement."
         />
 
         <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-5">
           <div className="lg:col-span-3">
-            <div className="rounded-2xl border border-border bg-white p-6 shadow-[0_10px_40px_-20px_rgba(16,35,63,0.25)] sm:p-8">
-              <ContactForm />
-            </div>
+            <WhatsAppQR />
           </div>
 
           <div className="flex flex-col gap-4 lg:col-span-2">
