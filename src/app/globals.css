@@ -2,25 +2,91 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --surface: #f5f7fa;
+  --surface-2: #eef1f6;
+  --foreground: #10233f;
+  --muted: #51617a;
+  --border: #e2e7f0;
+  --blue: #0878d9;
+  --blue-dark: #063b73;
+  --purple: #8b2bbe;
+  --pink: #e83b8e;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-blue: var(--blue);
+  --color-blue-dark: var(--blue-dark);
+  --color-purple: var(--purple);
+  --color-pink: var(--pink);
+  --font-sans: var(--font-manrope);
+  --font-body: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--blue), var(--purple) 60%, var(--pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-gradient-brand {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 70%, var(--pink) 100%);
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
