@@ -1,10 +1,10 @@
 export const siteConfig = {
   siteName: "StreamCrest",
   tagline: "Le Meilleur IPTV France Premium",
-  siteUrl: "https://www.streamcrest.fr",
+  siteUrl: "https://www.iptv4kxtream.com",
   description:
     "StreamCrest est un service IPTV premium en France : streaming HD/4K, compatibilité multi-appareils (Smart TV, Fire TV, Android, iPhone), configuration simple et support réactif.",
-  email: "support@streamcrest.fr",
+  email: "support@iptv4kxtream.com",
   supportUrl: "/contact",
   socialLinks: {
     twitter: "https://twitter.com/streamcrest",
