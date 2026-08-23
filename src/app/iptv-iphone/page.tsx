@@ -207,8 +207,17 @@ export default function IptvIphonePage() {
       <section className="bg-white py-12">
         <Container className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-3 text-sm">
           <span className="text-muted">Voir aussi :</span>
+          <Link
+            href="/blog/buffering-iptv-iphone"
+            className="font-semibold text-blue underline underline-offset-2"
+          >
+            IPTV qui buffer sur iPhone : solutions
+          </Link>
           <Link href="/iptv-smart-tv" className="font-semibold text-blue underline underline-offset-2">
             IPTV sur Smart TV
+          </Link>
+          <Link href="/iptv-apple-tv" className="font-semibold text-blue underline underline-offset-2">
+            IPTV sur Apple TV
           </Link>
           <Link
             href="/blog/ameliorer-la-fiabilite-du-streaming"

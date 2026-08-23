@@ -215,6 +215,12 @@ export default function IptvSmartTvPage() {
       <section className="bg-white py-12">
         <Container className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-3 text-sm">
           <span className="text-muted">Voir aussi :</span>
+          <Link
+            href="/blog/buffering-iptv-smart-tv"
+            className="font-semibold text-blue underline underline-offset-2"
+          >
+            IPTV qui buffer sur Smart TV : solutions
+          </Link>
           <Link href="/features" className="font-semibold text-blue underline underline-offset-2">
             fonctionnalités de notre service IPTV
           </Link>

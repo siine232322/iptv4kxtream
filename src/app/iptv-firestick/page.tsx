@@ -203,6 +203,12 @@ export default function IptvFirestickPage() {
       <section className="bg-white py-12">
         <Container className="mx-auto flex max-w-3xl flex-wrap items-center justify-center gap-3 text-sm">
           <span className="text-muted">Voir aussi :</span>
+          <Link
+            href="/blog/buffering-iptv-firestick"
+            className="font-semibold text-blue underline underline-offset-2"
+          >
+            IPTV qui buffer sur Firestick : solutions
+          </Link>
           <Link href="/iptv-smart-tv" className="font-semibold text-blue underline underline-offset-2">
             installer IPTV sur Smart TV
           </Link>

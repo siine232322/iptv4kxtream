@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -9,6 +10,46 @@ import CTA from "@/components/CTA";
 import { blogPosts } from "@/lib/data";
 import { siteConfig } from "@/lib/site";
 import { pageSocial, breadcrumbJsonLd as buildBreadcrumb } from "@/lib/seo";
+
+/** Strings starting with "## " render as an H2; consecutive "- " lines group into a <ul>. */
+function renderContent(content: string[]): ReactNode[] {
+  const blocks: ReactNode[] = [];
+  let listItems: string[] = [];
+
+  const flushList = (key: string) => {
+    if (listItems.length === 0) return;
+    blocks.push(
+      <ul key={key} className="flex flex-col gap-2">
+        {listItems.map((item, j) => (
+          <li key={j} className="flex gap-2.5">
+            <span className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    );
+    listItems = [];
+  };
+
+  content.forEach((block, i) => {
+    if (block.startsWith("## ")) {
+      flushList(`list-before-${i}`);
+      blocks.push(
+        <h2 key={i} className="mt-2 text-xl font-bold text-foreground">
+          {block.slice(3)}
+        </h2>
+      );
+    } else if (block.startsWith("- ")) {
+      listItems.push(block.slice(2));
+    } else {
+      flushList(`list-before-${i}`);
+      blocks.push(<p key={i}>{block}</p>);
+    }
+  });
+  flushList("list-end");
+
+  return blocks;
+}
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -114,15 +155,7 @@ export default async function BlogPostPage({
           </div>
 
           <div className="mt-8 flex flex-col gap-5 text-base leading-relaxed text-muted">
-            {post.content.map((block, i) =>
-              block.startsWith("## ") ? (
-                <h2 key={i} className="mt-2 text-xl font-bold text-foreground">
-                  {block.slice(3)}
-                </h2>
-              ) : (
-                <p key={i}>{block}</p>
-              )
-            )}
+            {renderContent(post.content)}
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3 border-t border-border pt-8 text-sm">
